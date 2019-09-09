@@ -1,0 +1,85 @@
+﻿@model IEnumerable<S1G2_PVFAPP.Models.Raw_Material>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style type="text/css">
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th {
+            background: light blue;
+        }
+
+        /* provide some minimal visual accomodation for IE8 and below */
+
+        .table tr {
+            background: #b8d1f3;
+        }
+
+
+
+            /* ODD background rows */
+
+            .table tr:nth-child(odd) {
+                background: #b8d1f3;
+            }
+
+            /* EVEN background rows */
+
+            .table tr:nth-child(even) {
+                background: #dae5f4;
+            }
+</style>
+
+<h2>Raw Materials</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaterialID)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.MaterialName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitOfMeasure)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaterialID)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.MaterialName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitOfMeasure)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaterialID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaterialID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaterialID })
+            </td>
+        </tr>
+    }
+
+</table>

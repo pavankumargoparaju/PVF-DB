@@ -1,0 +1,72 @@
+﻿@model IEnumerable<S1G2_PVFAPP.Models.Skill>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style type="text/css">
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th {
+            background: light blue;
+        }
+
+        /* provide some minimal visual accomodation for IE8 and below */
+
+        .table tr {
+            background: #b8d1f3;
+        }
+
+
+
+            /* ODD background rows */
+
+            .table tr:nth-child(odd) {
+                background: #b8d1f3;
+            }
+
+            /* EVEN background rows */
+
+            .table tr:nth-child(even) {
+                background: #dae5f4;
+            }
+</style>
+<h2>Employee Skills</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SkillID)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkillID)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SkillID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SkillID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SkillID })
+            </td>
+        </tr>
+    }
+
+</table>

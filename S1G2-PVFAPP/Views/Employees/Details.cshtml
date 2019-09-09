@@ -1,0 +1,131 @@
+﻿@model S1G2_PVFAPP.Models.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+    <style type="text/css">
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+            .table th {
+                background: #527EA9;
+            }
+
+            /* provide some minimal visual accomodation for IE8 and below */
+
+            .table tr {
+                background: #3d54e9;
+            }
+
+
+
+                /* ODD background rows */
+
+                .table tr:nth-child(odd) {
+                    background: #b8d1f3;
+                }
+
+                /* EVEN background rows */
+
+                .table tr:nth-child(even) {
+                    background: #dae5f4;
+                }
+    </style>
+
+<div>
+    <br /><br />
+    <h4>Employee Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ADDRESS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ADDRESS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZIPCODE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZIPCODE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupervisorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupervisorID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Designation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Designation)
+        </dd>
+
+    </dl>
+    <h4>Work Center Details</h4>
+    <table class="table" >
+        <tr>
+                <th>
+                    Work Center ID
+                </th>
+
+                <th>
+                   Location
+                </th>
+
+        </tr>
+        @foreach(var item in Model.Works)
+        {
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.WorkcenterID)</td>
+        <td>@Html.DisplayFor(modelItem => item.Work_center.WorkcenterName)</td>
+    </tr>
+
+            
+        }
+    </table>
+    <h4>Skills</h4>
+    <table class="table" title="Skills">
+        <tr>
+            <th>Skills</th>
+        </tr>
+        @foreach(var item in Model.Knowledges)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Skill.Description)</td>
+            </tr>
+        }
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

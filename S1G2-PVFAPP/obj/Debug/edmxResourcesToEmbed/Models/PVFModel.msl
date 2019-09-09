@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PVFAPPModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="PVFAPPModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="CustomerID" ColumnName="Customer_Id" />
+          <ScalarProperty Name="CustomerName" ColumnName="Customer_name" />
+          <ScalarProperty Name="Customer_address" ColumnName="Customer_address" />
+          <ScalarProperty Name="Customer_Postalcode" ColumnName="Customer_Postalcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="PVFAPPModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="Employee_id" ColumnName="Employee_id" />
+          <ScalarProperty Name="Employee_name" ColumnName="Employee_name" />
+          <ScalarProperty Name="Employee_address" ColumnName="Employee_address" />
+          <ScalarProperty Name="Employee_postalcode" ColumnName="Employee_postalcode" />
+          <ScalarProperty Name="Supervisor_Id" ColumnName="Supervisor_Id" />
+          <ScalarProperty Name="Employee_designation" ColumnName="Employee_designation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Manufactures">
+      <EntityTypeMapping TypeName="PVFAPPModel.Manufacture">
+        <MappingFragment StoreEntitySet="Manufactures">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Material_ID" ColumnName="Material_ID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="PVFAPPModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+          <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+          <ScalarProperty Name="CustomerID" ColumnName="Customer_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="PVFAPPModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Product_Description" ColumnName="Product_Description" />
+          <ScalarProperty Name="Product_Finish" ColumnName="Product_Finish" />
+          <ScalarProperty Name="Product_Price" ColumnName="Product_Price" />
+          <ScalarProperty Name="Productline_id" ColumnName="Productline_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productlines">
+      <EntityTypeMapping TypeName="PVFAPPModel.Productline">
+        <MappingFragment StoreEntitySet="Productline">
+          <ScalarProperty Name="Productline_id" ColumnName="Productline_id" />
+          <ScalarProperty Name="Productline_name" ColumnName="Productline_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Raw_Materials">
+      <EntityTypeMapping TypeName="PVFAPPModel.Raw_Material">
+        <MappingFragment StoreEntitySet="Raw Materials">
+          <ScalarProperty Name="Material_id" ColumnName="Material_id" />
+          <ScalarProperty Name="Material_name" ColumnName="Material_name" />
+          <ScalarProperty Name="Material_cost" ColumnName="Material_cost" />
+          <ScalarProperty Name="Material_UnitOfMeasure" ColumnName="Material_UnitOfMeasure" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sales_people">
+      <EntityTypeMapping TypeName="PVFAPPModel.Sales_Person">
+        <MappingFragment StoreEntitySet="Sales Person">
+          <ScalarProperty Name="Salesperson_ID" ColumnName="Salesperson_ID" />
+          <ScalarProperty Name="Salesperson_Name" ColumnName="Salesperson_Name" />
+          <ScalarProperty Name="Salesperson_Telephone" ColumnName="Salesperson_Telephone" />
+          <ScalarProperty Name="Salesperson_Fax" ColumnName="Salesperson_Fax" />
+          <ScalarProperty Name="Territory_ID" ColumnName="Territory_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skills">
+      <EntityTypeMapping TypeName="PVFAPPModel.Skill">
+        <MappingFragment StoreEntitySet="Skill">
+          <ScalarProperty Name="Skill_ID" ColumnName="Skill_ID" />
+          <ScalarProperty Name="Skill_Description" ColumnName="Skill_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supplies">
+      <EntityTypeMapping TypeName="PVFAPPModel.Supply">
+        <MappingFragment StoreEntitySet="Supplies">
+          <ScalarProperty Name="Vendor_ID" ColumnName="Vendor_ID" />
+          <ScalarProperty Name="Material_id" ColumnName="Material_id" />
+          <ScalarProperty Name="Supply_Unit_Price" ColumnName="Supply_Unit_Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Territories">
+      <EntityTypeMapping TypeName="PVFAPPModel.Territory">
+        <MappingFragment StoreEntitySet="Territory">
+          <ScalarProperty Name="Territory_ID" ColumnName="Territory_ID" />
+          <ScalarProperty Name="Territory_Name" ColumnName="Territory_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendors">
+      <EntityTypeMapping TypeName="PVFAPPModel.Vendor">
+        <MappingFragment StoreEntitySet="Vendor">
+          <ScalarProperty Name="Vendor_ID" ColumnName="Vendor_ID" />
+          <ScalarProperty Name="Vendor_Name" ColumnName="Vendor_Name" />
+          <ScalarProperty Name="Vendor_Address" ColumnName="Vendor_Address" />
+          <ScalarProperty Name="Vendor_Postalcode" ColumnName="Vendor_Postalcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Work_centers">
+      <EntityTypeMapping TypeName="PVFAPPModel.Work_center">
+        <MappingFragment StoreEntitySet="Work center">
+          <ScalarProperty Name="Workcenter_ID" ColumnName="Workcenter_ID" />
+          <ScalarProperty Name="Workcenter_Name" ColumnName="Workcenter_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderLines">
+      <EntityTypeMapping TypeName="PVFAPPModel.OrderLine">
+        <MappingFragment StoreEntitySet="OrderLine">
+          <ScalarProperty Name="Orderline_Quantity" ColumnName="Orderline_Quantity" />
+          <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+          <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Business" TypeName="PVFAPPModel.Business" StoreEntitySet="Business">
+      <EndProperty Name="Customer">
+        <ScalarProperty Name="CustomerID" ColumnName="Customer_Id" />
+      </EndProperty>
+      <EndProperty Name="Territory">
+        <ScalarProperty Name="Territory_ID" ColumnName="Territory_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Knowledge" TypeName="PVFAPPModel.Knowledge" StoreEntitySet="Knowledge">
+      <EndProperty Name="Employee">
+        <ScalarProperty Name="Employee_id" ColumnName="Employee_id" />
+      </EndProperty>
+      <EndProperty Name="Skill">
+        <ScalarProperty Name="Skill_ID" ColumnName="Skill_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Production" TypeName="PVFAPPModel.Production" StoreEntitySet="Production">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="Product_ID" ColumnName="Product_ID" />
+      </EndProperty>
+      <EndProperty Name="Work_center">
+        <ScalarProperty Name="Workcenter_ID" ColumnName="Workcenter_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Work" TypeName="PVFAPPModel.Work" StoreEntitySet="Work">
+      <EndProperty Name="Employee">
+        <ScalarProperty Name="Employee_id" ColumnName="Employee_id" />
+      </EndProperty>
+      <EndProperty Name="Work_center">
+        <ScalarProperty Name="Workcenter_ID" ColumnName="Workcenter_ID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

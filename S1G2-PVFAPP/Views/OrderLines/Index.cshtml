@@ -1,0 +1,76 @@
+﻿@model IEnumerable<S1G2_PVFAPP.Models.OrderLine>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style type="text/css">
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .table th {
+            background: light blue;
+        }
+
+        /* provide some minimal visual accomodation for IE8 and below */
+
+        .table tr {
+            background: #b8d1f3;
+        }
+
+
+
+            /* ODD background rows */
+
+            .table tr:nth-child(odd) {
+                background: #b8d1f3;
+            }
+
+            /* EVEN background rows */
+
+            .table tr:nth-child(even) {
+                background: #dae5f4;
+            }
+</style>
+<h2>OrderLine History</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderedQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order.CustomerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.Description)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderedQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order.CustomerID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

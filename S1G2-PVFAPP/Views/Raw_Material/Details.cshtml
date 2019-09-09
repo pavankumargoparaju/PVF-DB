@@ -1,0 +1,93 @@
+﻿@model S1G2_PVFAPP.Models.Raw_Material
+
+@{
+    ViewBag.Title = "Details";
+}
+
+    <style type="text/css">
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+            .table th {
+                background: #527EA9;
+            }
+
+            /* provide some minimal visual accomodation for IE8 and below */
+
+            .table tr {
+                background: #3d54e9;
+            }
+
+
+
+                /* ODD background rows */
+
+                .table tr:nth-child(odd) {
+                    background: #b8d1f3;
+                }
+
+                /* EVEN background rows */
+
+                .table tr:nth-child(even) {
+                    background: #dae5f4;
+                }
+    </style>
+<div>
+    <h4>Raw Material Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MaterialID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaterialID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaterialName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaterialName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitOfMeasure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitOfMeasure)
+        </dd>
+
+    </dl>
+    <h4>Vendor Details</h4>
+    <table class="table">
+        <tr>
+            <th>Vendor Name</th>
+            <th>Supply Unit Price</th>
+        </tr>
+        @foreach(var item in Model.Supplies)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Vendor.VendorName)</td>
+                <td>@Html.DisplayFor(modelItem => item.SupplyUnitPrice)</td>
+            </tr>
+        }
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaterialID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

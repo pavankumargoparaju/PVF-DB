@@ -1,0 +1,106 @@
+﻿@model S1G2_PVFAPP.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+    <style type="text/css">
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+            .table th {
+                background: #527EA9;
+            }
+
+            /* provide some minimal visual accomodation for IE8 and below */
+
+            .table tr {
+                background: #3d54e9;
+            }
+
+
+
+                /* ODD background rows */
+
+                .table tr:nth-child(odd) {
+                    background: #b8d1f3;
+                }
+
+                /* EVEN background rows */
+
+                .table tr:nth-child(even) {
+                    background: #dae5f4;
+                }
+    </style>
+
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductFinish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductFinish)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Productline.LineName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Productline.LineName)
+        </dd>
+
+    </dl>
+    <h4>Manufacture Details</h4>
+    <table class="table">
+        <tr>
+            <th>
+                Work Center ID
+            </th>
+            <th>
+                Quantity
+            </th>
+        </tr>
+        @foreach(var item in Model.Productions)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.WorkcenterID)</td>
+                <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+            </tr>
+        }
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
